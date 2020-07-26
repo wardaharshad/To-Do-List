@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            text-align: center;
+            background-color: black;
+            color: white;
+            font-size: 2rem;
+        }
+
+        h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: white;
+            font-weight: bolder;
+            font-size: 6rem;
+        }
+
+        #todo-list {
+            border-style: dotted;
+            border-radius: 50px 50px 50px 50px;
+            padding: 0.5rem 1rem;
+            outline: none;
+            transition: .5s;
+            color: black !important;
+            width: 55%;
+            font-size: 16px;
+
+        }
+
+        .styling {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: rgb(235, 17, 46);
+            font-weight: bolder;
+            font-size: 6rem;
+        }
+
+        .addBtn {
+            background: rgb(13, 196, 13);
+            border-radius: 50px 50px 50px 50px;
+            color: white;
+            outline: none;
+            width: 50px;
+            height: 50px;
+            font-size: 2rem;
+
+        }
+
+        .addBtn:hover,
+        .del-all:hover {
+            opacity: 0.7;
+        }
+
+        .del-all {
+            background: rgb(204, 12, 5);
+            border-radius: 50px 50px 50px 50px;
+            color: white;
+            outline: none;
+            width: 50px;
+            height: 50px;
+            font-size: 2rem;
+        }
+
+        #list {
+            list-style: none;
+        }
+
+        .todoitem {
+            text-align: left;
+            border-bottom: 1px dotted white;
+
+        }
+
+        .delbtn {
+            background-color: rgb(163, 69, 163);
+            border-radius: 50px;
+            font-size: 2rem;
+        }
+
+        .editbtn {
+            background-color: teal;
+            border-radius: 50px;
+            font-size: 2rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .header {
+            padding: 30px 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .header:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        ul li {
+            font-size: 2rem;
+            border-bottom: 1px solid white;
+            cursor: pointer;
+            position: relative;
+            padding: 12px 8px 12px 40px;
+            transition: 0.2s;
+
+            /* make the list items unselectable */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><span class="styling">TODO</span> LIST</h1>
+    <div class="header">
+        <input type="text" placeholder="Enter your item here" id="todo-list" class="textb">
+        <button onclick="addItem()" class="addBtn"><span><i class="fa fa-plus" aria-hidden="true"></i></span></button>
+        <button onclick="deleteAll()" class="del-all"><span><i class="fa fa-trash"
+                    aria-hidden="true"></i></span></button>
+        <ul id="list">
+
+        </ul>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
